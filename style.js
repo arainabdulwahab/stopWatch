@@ -9,6 +9,7 @@ stop.addEventListener("click",stops);
 
 let startTime;
 function starts (){
+    start.disabled = true;
     let sec =0;
     let min =0;
     let hr = 0;
@@ -32,4 +33,6 @@ function starts (){
 }
 function stops(){
     clearInterval(startTime);
+    start.disabled = false;
+    start.innerText = "restart";
 }
