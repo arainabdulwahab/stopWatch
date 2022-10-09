@@ -5,12 +5,14 @@ let minute = document.getElementById('minute');
 let second = document.getElementById('second');
 
 start.addEventListener("click",starts);
+stop.addEventListener("click",stops);
 
+let startTime;
 function starts (){
     let sec =0;
     let min =0;
     let hr = 0;
-    setInterval(() => {
+    startTime = setInterval(() => {
         sec++;
         let secMod = sec < 10 ? '0' + sec : sec;
         second.innerHTML = secMod;
@@ -27,4 +29,7 @@ function starts (){
             }
         }
     }, 1000);
+}
+function stops(){
+    clearInterval(startTime);
 }
