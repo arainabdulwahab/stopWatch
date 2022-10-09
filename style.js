@@ -7,13 +7,18 @@ let second = document.getElementById('second');
 start.addEventListener("click",starts);
 
 function starts (){
-    let counter =0;
+    let sec =0;
+    let min =0;
+    let hr = 0;
     setInterval(() => {
-        counter++;
-        second.innerHTML = counter;
-        if(counter === 60){
-           
-            counter =0;
+        sec++;
+        let secMod = sec < 10 ? '0' + sec : sec;
+        second.innerHTML = secMod;
+        if(sec === 15){
+            sec =0;
+            min ++;
+            let minMod = sec < 10 ? '0' + min : min;
+            minute.innerHTML = minMod;
         }
     }, 1000);
 }
